@@ -1,0 +1,24 @@
+{
+  "name": "line-bot-nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Forest0923/line-bot-nodejs.git"
+  },
+  "author": "forest0923",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Forest0923/line-bot-nodejs/issues"
+  },
+  "homepage": "https://github.com/Forest0923/line-bot-nodejs#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "linebot": "^1.5.3"
+  }
+}
