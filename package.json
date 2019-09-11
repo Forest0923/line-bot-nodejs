@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Forest0923/line-bot-nodejs#readme",
   "dependencies": {
+    "dotenv": "^8.1.0",
     "express": "^4.17.1",
     "linebot": "^1.5.3",
     "request": "^2.88.0"
