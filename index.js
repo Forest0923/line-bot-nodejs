@@ -4,7 +4,7 @@ require('dotenv').config();
 
 const app = express();
 
-const bot = linebot({
+const bot = new linebot({
   channelId: process.env.CHANNEL_ID,
   channelSecret: process.env.CHANNEL_SECRET,
   channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN,
@@ -27,11 +27,11 @@ bot.on('message', function (event) {
           "contents": [
             {
               "type": "text",
-              "text": "hello"
+              "text": "Hello"
             },
             {
               "type": "text",
-              "text": "world"
+              "text": "world!"
             }
           ]
         }
