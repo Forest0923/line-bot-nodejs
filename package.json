@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Forest0923/line-bot-nodejs#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "linebot": "^1.5.3"
+    "linebot": "^1.5.3",
+    "request": "^2.88.0"
   }
 }
