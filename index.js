@@ -22,7 +22,7 @@ bot.on('message', function (event) {
     console.log('Success');
   }).catch(function (error) {
     console.log('Error');
-  })
+  });
   bot.broadcast("hi\uDBC0\uDC84"); // emoji;
 });
 
@@ -32,13 +32,6 @@ bot.on('follow', function(event){
   event.source.profile().then(function(profile){
     event.reply('Hello ' + profile.displayName + ' !');
   });
-  // event.reply(
-  //   'Hello ' + bot.getUserProfile(event.source.userId) + ' !'
-  // ).then(function(data){
-  //   console.log('Success: follow');
-  // }).catch(function(error){
-  //   console.log('Error: follow');
-  // });
 });
 
 bot.on('unfollow', function(event){
