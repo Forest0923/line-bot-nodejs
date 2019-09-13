@@ -29,13 +29,16 @@ bot.on('message', function (event) {
 bot.on('follow', function(event){
   console.log('Followed by ' + event.source.userId);
   // console.log(event);
-  event.reply(
-    'Hello ' + bot.getUserProfile(event.source.userId) + ' !'
-  ).then(function(data){
-    console.log('Success: follow');
-  }).catch(function(error){
-    console.log('Error: follow');
+  event.source.profile().then(function(profile){
+    event.reply('Hello ' + profile.displayName + ' !');
   });
+  // event.reply(
+  //   'Hello ' + bot.getUserProfile(event.source.userId) + ' !'
+  // ).then(function(data){
+  //   console.log('Success: follow');
+  // }).catch(function(error){
+  //   console.log('Error: follow');
+  // });
 });
 
 bot.on('unfollow', function(event){
