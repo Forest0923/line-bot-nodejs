@@ -1,10 +1,13 @@
-;const express = require('express');
+const express = require('express');
 const linebot = require('linebot');
 require('dotenv').config();
 
 const app = express();
 
-const bot = new linebot({   channelId: process.env.CHANNEL_ID,   channelSecret: process.env.CHANNEL_SECRET,   channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN,
+const bot = new linebot({
+  channelId: process.env.CHANNEL_ID,
+  channelSecret: process.env.CHANNEL_SECRET,
+  channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN,
   verify: true
 });
 
@@ -21,25 +24,25 @@ bot.on('message', function (event) {
     console.log('Error');
   })
   bot.broadcast("hi\uDBC0\uDC84"); // emoji;
-})
-;
+});
+
 bot.on('follow', function(event){
-  console.log('Followed by ' + event.source.userId)
-  // console.log(event);;
+  console.log('Followed by ' + event.source.userId);
+  // console.log(event);
   event.reply(
-    'Thank you!!'
+    'Hello ' + bot.getUserProfile(event.source.userId) + ' !'
   ).then(function(data){
-    console.log('Success: follow')
+    console.log('Success: follow');
   }).catch(function(error){
-    console.log('Error: follow')
-  })
-}
-)
+    console.log('Error: follow');
+  });
+});
+
 bot.on('unfollow', function(event){
-  console.log('Unfollowed by ' + event.source.userId)
-  // console.log(event);)
-}
-)
+  console.log('Unfollowed by ' + event.source.userId);
+  // console.log(event);
+});
+
 app.listen(process.env.PORT || 80, function () {
   console.log('LineBot is running.');
-})
+});
